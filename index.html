@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%237b282a'/%3E%3Ctext x='7' y='25' font-family='Georgia' font-size='27' fill='%23fff8e5'%3ER%3C/text%3E%3C/svg%3E">
     <title>Ronan Schoolhouse | A place for community again</title>
-    <link rel="alternate" type="text/markdown" href="/README.md">
     <meta name="description"
         content="Our vision for Ronan Schoolhouse: affordable senior apartments, community event space, and a family funhouse. Help follow a beloved school’s next chapter.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%237b282a'/%3E%3Ctext x='7' y='25' font-family='Georgia' font-size='27' fill='%23fff8e5'%3ER%3C/text%3E%3C/svg%3E">
     <style>
         :root {
             --paper: #fff9eb;
@@ -298,11 +297,14 @@
 
         .project {
             padding: 35px;
-            background: #ffe29a;
             border-top: 5px solid var(--red);
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 40px
+        }
+
+        .project:nth-child(1) {
+            background: #ffe29a
         }
 
         .project:nth-child(2) {
@@ -311,6 +313,14 @@
 
         .project:nth-child(3) {
             background: #f8cec4
+        }
+
+        .project:nth-child(4) {
+            background: #ffe29a
+        }
+
+        .project:nth-child(5) {
+            background: #cfe9f4
         }
 
         .project h3,
@@ -617,8 +627,8 @@
                 <div>
                     <p class="eyebrow">A beloved school. A shared future.</p>
                     <h1 id="hero-title">A place for<br><em>community.</em><br>Again.</h1>
-                    <p class="intro">Our vision is to bring this beloved former school back to life with affordable
-                        senior apartments, community event space, and a family funhouse.</p>
+                    <p class="intro" id="hero-intro">Our vision is to bring this beloved former school back to life with
+                        affordable senior apartments, community event space, and a family funhouse.</p>
                     <a class="button" href="#projects">Explore upcoming projects</a>
                     <p class="quiet">A family with kids, learning as we go and bringing you along.</p>
                 </div>
@@ -636,15 +646,17 @@
     <section id="story" class="wrap story">
         <div>
             <p class="eyebrow">Our vision</p>
-            <h2>Built for a school.<br>Reimagined for<br>the community.</h2>
+            <h2 id="story-heading">Built for a school.<br>Reimagined for<br>the community.</h2>
         </div>
         <div>
             <p class="large">A family, an old school, and a future worth figuring out.</p>
-            <p>Behind Ronan Schoolhouse is our family, kids included. We’re taking this on with a family budget, plenty
-                of questions, and a willingness to learn. Some days, progress means figuring out the next step.</p>
-            <p>We don’t have every step mapped out, but we know what we want this place to become: affordable homes for
-                older adults, space for neighbors to gather, and a funhouse for families. This school already means so
-                much to the community. We want to give it a chance to serve that community again.</p>
+            <p id="story-p1">Behind Ronan Schoolhouse is our family, kids included. We’re taking this on with a family
+                budget, plenty of questions, and a willingness to learn. Some days, progress means figuring out the next
+                step.</p>
+            <p id="story-p2">We don’t have every step mapped out, but we know what we want this place to become:
+                affordable homes for older adults, space for neighbors to gather, and a funhouse for families. This
+                school already means so much to the community. We want to give it a chance to serve that community
+                again.</p>
         </div>
     </section>
 
@@ -682,54 +694,8 @@
             <p class="sponsor-note">We’ll share what we’re learning and confirm plans as they take shape.</p>
         </section>
 
-        <section class="project-list" aria-label="Upcoming projects">
-            <article class="project">
-                <div>
-                    <span class="number">01 / PLUMBING</span>
-                    <h3>Plumbing insulation and freeze protection</h3>
-                    <p>We are focusing on plumbing insulation and freeze protection for water lines to help protect the
-                        water systems during cold weather.</p>
-                    <span class="status">Upcoming project</span>
-                </div>
-                <div>
-                    <h4>Potential ways to participate</h4>
-                    <p>Supply plumbing insulation or water line protection products and explore opportunities to feature
-                        them in our project videos and social posts.</p>
-                    <a href="#sponsor">Discuss this project ↗</a>
-                </div>
-            </article>
-
-            <article class="project">
-                <div>
-                    <span class="number">02 / ELECTRICAL</span>
-                    <h3>Tracing electrical branch circuits</h3>
-                    <p>Our focus is tracing the electrical branch circuits so we can better understand how power is
-                        distributed throughout the school.</p>
-                    <span class="status">Upcoming project</span>
-                </div>
-                <div>
-                    <h4>Potential ways to participate</h4>
-                    <p>Supply circuit tracing tools or related equipment and explore opportunities to showcase your
-                        products as we document this project.</p>
-                    <a href="#sponsor">Discuss this project ↗</a>
-                </div>
-            </article>
-
-            <article class="project">
-                <div>
-                    <span class="number">03 / INDOOR ENVIRONMENT</span>
-                    <h3>Air quality and humidity control</h3>
-                    <p>We are focusing on air quality and humidity control as part of caring for the building and
-                        preparing for its next chapter.</p>
-                    <span class="status">Upcoming project</span>
-                </div>
-                <div>
-                    <h4>Potential ways to participate</h4>
-                    <p>Supply humidity monitoring, dehumidification, or air quality equipment and explore opportunities
-                        to feature your products in our project updates.</p>
-                    <a href="#sponsor">Discuss this project ↗</a>
-                </div>
-            </article>
+        <!-- Empty list ready to be populated by JSON -->
+        <section class="project-list" aria-label="Upcoming projects" id="dynamic-projects">
         </section>
 
         <section class="sponsor" id="sponsor">
@@ -787,6 +753,58 @@
             </div>
         </footer>
     </div>
+
+    <!-- Decap CMS Fetch Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 1. Fetch Main Home Page Content
+            try {
+                const res = await fetch('content.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.hero_title) document.getElementById('hero-title').innerHTML = data.hero_title;
+                    if (data.hero_intro) document.getElementById('hero-intro').textContent = data.hero_intro;
+                    if (data.story_heading) document.getElementById('story-heading').innerHTML = data.story_heading;
+                    if (data.story_p1) document.getElementById('story-p1').textContent = data.story_p1;
+                    if (data.story_p2) document.getElementById('story-p2').textContent = data.story_p2;
+                }
+            } catch (error) {
+                console.error("Could not load content.json", error);
+            }
+
+            // 2. Fetch Upcoming Projects
+            // We explicitly list the project filenames created in the CMS.
+            const projectFiles = ['plumbing.json', 'electrical.json', 'indoor-environment.json'];
+            const projectContainer = document.getElementById('dynamic-projects');
+
+            for (const file of projectFiles) {
+                try {
+                    const res = await fetch(`projects/${file}`);
+                    if (res.ok) {
+                        const proj = await res.json();
+                        const article = document.createElement('article');
+                        article.className = 'project';
+                        article.innerHTML = `
+          <div>
+            <span class="number">${proj.category}</span>
+            <h3>${proj.title}</h3>
+            <p>${proj.description}</p>
+            <span class="status">${proj.status}</span>
+          </div>
+          <div>
+            <h4>Potential ways to participate</h4>
+            <p>${proj.sponsor_text}</p>
+            <a href="#sponsor">Discuss this project ↗</a>
+          </div>
+        `;
+                        projectContainer.appendChild(article);
+                    }
+                } catch (error) {
+                    console.error(`Could not load project: ${file}`, error);
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

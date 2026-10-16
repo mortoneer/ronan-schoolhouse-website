@@ -15,11 +15,58 @@ collections:
         name: home
         file: content.json
         fields:
+          - { label: Hero Emdash, name: hero_emdash, widget: string, hint: A beloved school. A shared future. }
           - { label: Hero Title, name: hero_title, widget: string }
           - { label: Hero Intro, name: hero_intro, widget: text }
+          - { label: Hero Tiny, name: hero_tiny, widget: string, hint: A family with kids, learning as we go and bringing you along. }
+
+          - { label: Yellow Horizontal, name: hr_1, widget: text, hint: live }
+          - { label: Yellow Horizontal, name: hr_2, widget: text, hint: laugh }
+          - { label: Yellow Horizontal, name: hr_3, widget: text, hint: love }
+
+          - { label: Story Emdash, name: story_emdash, widget: string, hint: Our vision }
+          - { label: Story Title, name: story_title, widget: string }
           - { label: Story Heading, name: story_heading, widget: string }
           - { label: Story Body Paragraph 1, name: story_p1, widget: text }
           - { label: Story Body Paragraph 2, name: story_p2, widget: text }
+
+          - { label: Goals Emdash, name: goals_emdash, widget: string, hint: What we’re working toward }
+          - { label: Goals Title, name: goals_title, widget: string, hint: One schoolhouse. So many possibilities. }
+
+          - { label: Project Emdash, name: project_emdash, widget: string, hint: Building our next chapter }
+          - { label: Project Title, name: project_title, widget: string }
+          - { label: Project Body Paragraph 1, name: project_p1, widget: text }
+          - { label: Project Body Paragraph 2, name: project_p2, widget: text }
+
+          - { label: Sponsor Emdash, name: sponsor_emdash, widget: string, hint: Let’s build something together }
+          - { label: Sponsor Title, name: sponsor_title, widget: string }
+          - { label: Sponsor Body Paragraph 1, name: sponsor_p1, widget: text }
+          - { label: Sponsor Body Paragraph 2, name: sponsor_p2, widget: text }
+      - label: What is visibile on the page
+        name: visibility
+        file: visibility.json
+        fields:
+          - label: Visible Projects
+            name: visible_projects
+            widget: relation
+            hint: A beloved school. A shared future.
+            collection: "projects"
+            value_field: "{{slug}}"
+            search_fields: ["title"]
+            display_fields: [title]
+            multiple: true
+
+  - name: goals
+    label: Goals
+    folder: goals
+    create: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - { label: Category Number, name: category, widget: string, hint: "e.g., 01 / LIVE" }
+      - { label: Project Title, name: title, widget: string, hint: Affordable senior apartments }
+      - { label: Description, name: description, widget: text, hint: "Our plan starts with homes for older adults: an affordable place to live in a building with deep community roots." }
 
   - name: projects
     label: Upcoming Projects
@@ -34,3 +81,4 @@ collections:
       - { label: Description, name: description, widget: text }
       - { label: Status, name: status, widget: string, default: Upcoming project }
       - { label: Sponsor Opportunities, name: sponsor_text, widget: text }
+  
