@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: mortoneer/ronan-schoolhouse-website
+  branch: main
+  base_url: https://sveltia-cms-auth.steve-kane-189.workers.dev
+
+media_folder: images
+public_folder: images
+
+collections:
+  - name: content
+    label: Website Text
+    files:
+      - label: Home Page
+        name: home
+        file: content.json
+        fields:
+          - { label: Hero Title, name: hero_title, widget: string }
+          - { label: Hero Intro, name: hero_intro, widget: text }
+          - { label: Story Heading, name: story_heading, widget: string }
+          - { label: Story Body Paragraph 1, name: story_p1, widget: text }
+          - { label: Story Body Paragraph 2, name: story_p2, widget: text }
+
+  - name: projects
+    label: Upcoming Projects
+    folder: projects
+    create: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - { label: Category Number, name: category, widget: string, hint: "e.g., 01 / PLUMBING" }
+      - { label: Project Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Status, name: status, widget: string, default: Upcoming project }
+      - { label: Sponsor Opportunities, name: sponsor_text, widget: text }
