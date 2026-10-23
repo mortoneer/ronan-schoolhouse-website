@@ -77,7 +77,7 @@ Follow our family through the questions, small wins, and work of giving this bel
 * YouTube: @RonanSchoolhouse
 * Instagram: @ronanschoolhouse
 * TikTok: @ronanschoolhouse
-* Facebook: Ronan Schoolhouse https://www.facebook.com/profile.php?id=61585289026389#
+* Facebook: @RonanSchoolhouse
 
 ## Global Website Elements
 

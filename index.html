@@ -630,7 +630,7 @@
                     <p class="intro" id="hero-intro">Our vision is to bring this beloved former school back to life with
                         affordable senior apartments, community event space, and a family funhouse.</p>
                     <a class="button" href="#projects">Explore upcoming projects</a>
-                    <p class="quiet">A family with kids, learning as we go and bringing you along.</p>
+                    <p class="quiet">Follow our family as we learn, explore, and share our adventures in bringing an old school back to life.</p>
                 </div>
                 <figure>
                     <img src="images/family.jpeg" width="621" height="777"
@@ -646,17 +646,13 @@
     <section id="story" class="wrap story">
         <div>
             <p class="eyebrow">Our vision</p>
-            <h2 id="story-heading">Built for a school.<br>Reimagined for<br>the community.</h2>
+            <h2 id="story-heading">Honoring a School's History.<br>Imagining a New Future.</h2>
         </div>
         <div>
-            <p class="large">A family, an old school, and a future worth figuring out.</p>
-            <p id="story-p1">Behind Ronan Schoolhouse is our family, kids included. We’re taking this on with a family
-                budget, plenty of questions, and a willingness to learn. Some days, progress means figuring out the next
-                step.</p>
-            <p id="story-p2">We don’t have every step mapped out, but we know what we want this place to become:
-                affordable homes for older adults, space for neighbors to gather, and a funhouse for families. This
-                school already means so much to the community. We want to give it a chance to serve that community
-                again.</p>
+            <p class="large" id="story-large">We're a family from New Jersey with two kids, a dog, and a desire to do something different.</p>
+            <p id="story-p1">A midlife crisis can take many forms. Ours just happened to involve buying a 31,000-square-foot elementary school in Pennsylvania.</p>
+            <p id="story-p2">We don’t have all the answers, and we’re learning as we go. With plenty of determination, a willingness to learn, and a little help from friends, we’re working to give this beloved building a new purpose.</p>
+            <p id="story-p3">Our vision is to create affordable apartments for seniors, welcoming spaces for neighbors to gather, and a place where families can come together and make lasting memories.</p>
         </div>
     </section>
 
@@ -688,9 +684,7 @@
         <section id="projects" class="project-intro">
             <p class="eyebrow">Building our next chapter</p>
             <h2>Big possibilities.<br><em>Room for you.</em></h2>
-            <p>We’re a family with children taking on a very big building. Our budget is a family budget, and we’re
-                figuring out plenty as we go. The vision is clear: give this school a future serving the community.
-                These are the next practical pieces we’re working on.</p>
+            <p>The vision is clear: give this school a future serving the community. These are the next practical pieces we’re working on.</p>
             <p class="sponsor-note">We’ll share what we’re learning and confirm plans as they take shape.</p>
         </section>
 
@@ -702,7 +696,7 @@
             <p class="eyebrow">Let’s build something together</p>
             <div class="sponsor-grid">
                 <div>
-                    <h2>Help give the school<br>a new purpose.</h2>
+                    <h2>Let’s build something together.</h2>
                     <p>The right tools and materials can help our family take the next step. If your products or
                         equipment are a good fit, we’d love to put them to use and share that part of the story through
                         our project videos and social posts.</p>
@@ -729,8 +723,7 @@
         <div class="wrap">
             <div class="follow-top">
                 <h2>Be part of<br>the next chapter.</h2>
-                <p>Follow our family through the questions, small wins, and work of giving this beloved school a new
-                    purpose.</p>
+                <p>Follow our family through the questions, small wins, and work of renovating this beloved building.</p>
             </div>
             <div class="links">
                 <a href="https://www.youtube.com/@RonanSchoolhouse"><span>YouTube<small>@RonanSchoolhouse</small></span><b
@@ -739,7 +732,7 @@
                         aria-hidden="true">↗</b></a>
                 <a href="https://www.tiktok.com/@ronanschoolhouse"><span>TikTok<small>@ronanschoolhouse</small></span><b
                         aria-hidden="true">↗</b></a>
-                <a href="https://www.facebook.com/61585289026389"><span>Facebook<small>Ronan
+                <a href="https://www.facebook.com/RonanSchoolhouse"><span>Facebook<small>Ronan
                             Schoolhouse</small></span><b aria-hidden="true">↗</b></a>
             </div>
         </div>
@@ -765,8 +758,10 @@
                     if (data.hero_title) document.getElementById('hero-title').innerHTML = data.hero_title;
                     if (data.hero_intro) document.getElementById('hero-intro').textContent = data.hero_intro;
                     if (data.story_heading) document.getElementById('story-heading').innerHTML = data.story_heading;
+                    if (data.story_large) document.getElementById('story-large').textContent = data.story_large;
                     if (data.story_p1) document.getElementById('story-p1').textContent = data.story_p1;
                     if (data.story_p2) document.getElementById('story-p2').textContent = data.story_p2;
+                    if (data.story_p3) document.getElementById('story-p3').textContent = data.story_p3;
                 }
             } catch (error) {
                 console.error("Could not load content.json", error);
@@ -792,7 +787,7 @@
             <span class="status">${proj.status}</span>
           </div>
           <div>
-            <h4>Potential ways to participate</h4>
+            <h4>Ways to participate</h4>
             <p>${proj.sponsor_text}</p>
             <a href="#sponsor">Discuss this project ↗</a>
           </div>
