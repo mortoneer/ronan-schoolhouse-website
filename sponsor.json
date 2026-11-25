@@ -1,0 +1,17 @@
+{
+  "active": true,
+  "show_from": "2026-11-24",
+  "expires": "2026-12-09",
+  "label": "Thanks to our sponsor",
+  "message": "We're partnering with Raythink on our next video — check out their thermal cameras:",
+  "links": [
+    {
+      "text": "Raythink EX10 Pro Thermal Camera",
+      "url": "https://www.amazon.com/dp/B0G4MK1QDV?tag=ronanschoolhouse-20"
+    },
+    {
+      "text": "Raythink CX20 Pro Thermal Camera",
+      "url": "https://www.amazon.com/dp/B0G4MGWRT9?tag=ronanschoolhouse-20"
+    }
+  ]
+}

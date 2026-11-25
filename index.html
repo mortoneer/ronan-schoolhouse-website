@@ -601,6 +601,60 @@
             }
         }
 
+        /* ── Sponsor banner ── */
+        #sponsor-banner {
+            background: var(--yellow);
+            border-bottom: 1px solid var(--ink);
+            padding: 11px 0;
+            font-size: 14px
+        }
+
+        .sponsor-banner-inner {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .sponsor-banner-label {
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 11px;
+            white-space: nowrap
+        }
+
+        .sponsor-banner-msg {
+            color: #5a3b2a
+        }
+
+        .sponsor-banner-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .sponsor-banner-links a {
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            white-space: nowrap
+        }
+
+        .sponsor-banner-links a:hover {
+            color: var(--red)
+        }
+
+        @media(max-width:760px) {
+            .sponsor-banner-inner {
+                gap: 6px
+            }
+
+            .sponsor-banner-links {
+                gap: 12px
+            }
+        }
+
         @media(prefers-reduced-motion:reduce) {
             html {
                 scroll-behavior: auto
@@ -611,6 +665,10 @@
 
 <body>
     <a class="skip" href="#main">Skip to content</a>
+
+    <!-- Sponsor banner — populated by sponsor.json -->
+    <div id="sponsor-banner" style="display:none" role="region" aria-label="Sponsor"></div>
+
     <div class="wrap">
         <header>
             <a class="brand" href="#">Ronan Schoolhouse<span>Pennsylvania</span></a>
@@ -750,6 +808,39 @@
     <!-- Decap CMS Fetch Script -->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
+            // 0. Sponsor banner
+            try {
+                const sRes = await fetch('sponsor.json');
+                if (sRes.ok) {
+                    const s = await sRes.json();
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    const from    = s.show_from ? new Date(s.show_from) : null;
+                    const expires = s.expires   ? new Date(s.expires)   : null;
+
+                    const withinWindow =
+                        s.active !== false &&
+                        (!from    || today >= from) &&
+                        (!expires || today <= expires);
+
+                    if (withinWindow) {
+                        const banner = document.getElementById('sponsor-banner');
+                        const linksHtml = (s.links || [])
+                            .map(l => `<a href="${l.url}" target="_blank" rel="noopener sponsored">${l.text} ↗</a>`)
+                            .join('');
+                        banner.innerHTML = `
+                            <div class="wrap sponsor-banner-inner">
+                                <span class="sponsor-banner-label">${s.label || 'Sponsor'}</span>
+                                ${s.message ? `<span class="sponsor-banner-msg">${s.message}</span>` : ''}
+                                ${linksHtml ? `<span class="sponsor-banner-links">${linksHtml}</span>` : ''}
+                            </div>`;
+                        banner.style.display = '';
+                    }
+                }
+            } catch (e) {
+                console.error('Could not load sponsor.json', e);
+            }
+
             // 1. Fetch Main Home Page Content
             try {
                 const res = await fetch('content.json');
